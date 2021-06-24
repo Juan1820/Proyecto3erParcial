@@ -26,8 +26,8 @@ public class NewMain {
         Scanner leer = new Scanner(System.in);
         
          while (resp<6){
-            
-        System.out.println("----Menu----");
+             try {
+                System.out.println("----Menu----");
         System.out.println("1---Agregar un Usuario");
         System.out.println("2---Eliminar un Usuario");
         System.out.println("3---Buscar un Usuario por nombre");
@@ -96,7 +96,10 @@ public class NewMain {
             break;
             default:
                 System.out.println("opcion no valida");
-        } 
+        }  
+             } catch (Exception e) {
+             }
+        
         } 
         
     }
