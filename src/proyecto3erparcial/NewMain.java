@@ -25,14 +25,14 @@ public class NewMain {
         List<Usuario> usuario = new ArrayList<>();
         Scanner leer = new Scanner(System.in);
         
-         while (resp<6){
+         do{
              try {
-                System.out.println("----Menu----");
+        System.out.println("----Menu----");
         System.out.println("1---Agregar un Usuario");
         System.out.println("2---Eliminar un Usuario");
         System.out.println("3---Buscar un Usuario por nombre");
         System.out.println("4---Mostrar Usuarios");
-        System.out.println("5---Salir");
+        System.out.println("0---Salir");
         resp = Integer.parseInt(leer.next());
         switch(resp){
             case 1:
@@ -57,13 +57,14 @@ public class NewMain {
                 u1.setNombre(nombre);
                 for(Usuario e:usuario){
                     if(e.getNombre().equals(u1.getNombre())){
-                        System.out.println(usuario.indexOf(usuario));
+                        System.out.println(usuario.indexOf(e));
                         
+                        usuario.remove(e);
+                        
+                        System.out.println("Usuario Eliminado");
                   
                     }
-                    else{
-                        System.out.println("No esta men 7_7 ");
-                    }
+                    
                     }
         
                 
@@ -89,10 +90,13 @@ public class NewMain {
             break;
             case 4:
                 System.out.println("Tamaño de la lista " + usuario.size());
+                System.out.println("Clientes ");
+                
             break;
             case 5:
+                if(resp==0){
                 System.out.println("saliste bye");
-                resp=6;
+                }
             break;
             default:
                 System.out.println("opcion no valida");
@@ -100,7 +104,8 @@ public class NewMain {
              } catch (Exception e) {
              }
         
-        } 
+        } while (resp!=0);
+        
         
     }
     
